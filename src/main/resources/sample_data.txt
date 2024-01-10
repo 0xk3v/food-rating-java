@@ -1,0 +1,5 @@
+Restaurant A,123 Main St,Italian,12:00 PM - 8:00 PM
+Bistro B,456 Oak St,French,10:00 AM - 6:00 PM
+Takeaway C,789 Elm St,Asian,9:00 AM - 10:00 PM
+Cafe D,101 Pine St,Coffee Shop,8:00 AM - 7:00 PM
+Pizzeria E,202 Maple St,Pizza,11:00 AM - 9:00 PM
