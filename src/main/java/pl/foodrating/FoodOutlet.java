@@ -11,19 +11,17 @@ public class FoodOutlet {
     private String address;
     private String cuisineType;
     private String openingHours;
-    private List<RatingReview> reviews;
+    private List<Rating> ratings;
 
-    // Constructor
     public FoodOutlet(String name, String address, String cuisineType, String openingHours) {
         this.id = nextId++;
         this.name = name;
         this.address = address;
         this.cuisineType = cuisineType;
         this.openingHours = openingHours;
-        this.reviews = new ArrayList<>();
+        this.ratings = new ArrayList<>();
     }
 
-    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -60,26 +58,24 @@ public class FoodOutlet {
         this.openingHours = openingHours;
     }
 
-    public List<RatingReview> getReviews() {
-        return reviews;
+    public List<Rating> getRatings() {
+        return ratings;
     }
 
-    // Method to add a review to the food outlet
-    public void addReview(RatingReview review) {
-        reviews.add(review);
+    public void addRating(Rating rating) {
+        ratings.add(rating);
     }
 
-    // Method to calculate the average rating of the food outlet
     public double calculateAverageRating() {
-        if (reviews.isEmpty()) {
+        if (ratings.isEmpty()) {
             return 0.0;
         }
 
         int totalRating = 0;
-        for (RatingReview review : reviews) {
-            totalRating += review.getRating();
+        for (Rating rating : ratings) {
+            totalRating += rating.getRating();
         }
 
-        return (double) totalRating / reviews.size();
+        return (double) totalRating / ratings.size();
     }
 }
