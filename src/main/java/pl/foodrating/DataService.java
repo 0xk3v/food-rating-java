@@ -45,7 +45,7 @@ public class DataService {
     }
 
     public static void saveSampleData(List<FoodOutlet> foodOutlets, String filePath) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/" + filePath))) {
             for (FoodOutlet outlet : foodOutlets) {
                 writer.write(outlet.getName() + "," + outlet.getAddress() + "," +
                         outlet.getCuisineType() + "," + outlet.getOpeningHours());
