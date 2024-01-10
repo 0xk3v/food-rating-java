@@ -17,21 +17,21 @@ public class Menu {
         do {
             System.out.println("------ Food Outlet Rating System ------");
             System.out.println("1. View Food Outlets");
-            System.out.println("2. Add Rating and Review");
+            System.out.println("2. Add Rating ");
             System.out.println("3. Load Sample Data");
             System.out.println("4. Save Sample Data");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
 
             choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
                     viewFoodOutlets();
                     break;
                 case 2:
-                    addRatingAndReview();
+                    addRating();
                     break;
                 case 3:
                     loadSampleData();
@@ -62,23 +62,20 @@ public class Menu {
         }
     }
 
-    private void addRatingAndReview() {
+    private void addRating() {
         viewFoodOutlets();
         System.out.print("Enter the ID of the food outlet you want to review: ");
         int outletId = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
+        scanner.nextLine();
 
         FoodOutlet selectedOutlet = findFoodOutletById(outletId);
         if (selectedOutlet != null) {
             System.out.print("Enter your rating (1-5): ");
             int rating = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine();
 
-            System.out.print("Enter your review: ");
-            String review = scanner.nextLine();
-
-            RatingReview newReview = new RatingReview(1, outletId, rating, review);
-            selectedOutlet.addReview(newReview);
+            Rating newReview = new Rating(outletId, rating);
+            selectedOutlet.addRating(newReview);
             System.out.println("Rating and review added successfully for " + selectedOutlet.getName());
         } else {
             System.out.println("Food outlet with ID " + outletId + " not found.");
