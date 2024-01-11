@@ -23,7 +23,6 @@ public class DataService {
 
             String line;
             while ((line = reader.readLine()) != null) {
-                // System.out.println(line);
 
                 String[] parts = line.split(",");
 
